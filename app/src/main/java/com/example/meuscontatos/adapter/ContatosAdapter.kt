@@ -1,5 +1,6 @@
 package com.example.meuscontatos.adapter
 
+import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +15,33 @@ class ContatosAdapter(
 ): RecyclerView.Adapter<ContatosAdapter.ContatoViewHolder>() {
 
     inner class ContatoViewHolder(layoutContatoView: View):
-        RecyclerView.ViewHolder(layoutContatoView) {
+        RecyclerView.ViewHolder(layoutContatoView), View.OnCreateContextMenuListener {
         val nomeTv: TextView = layoutContatoView.findViewById(R.id.nomeTv)
         val telefoneTv: TextView = layoutContatoView.findViewById(R.id.telefoneTv)
+        init {
+            layoutContatoView.setOnCreateContextMenuListener(this)
+        }
+
+        // posicao sera setada pelo onBindViewHolder para chamar as funcoes de tratamento
+        private val POSICAO_INVALIDA = -1
+        var posicao: Int = POSICAO_INVALIDA
+
+        override fun onCreateContextMenu(menu: ContextMenu?, view: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+            menu?.add("Editar")?.setOnMenuItemClickListener {
+                if (posicao != POSICAO_INVALIDA) {
+                    onContatoClickListener.onEditarMenuItemClick(posicao)
+                    true
+                }
+                false
+            }
+            menu?.add("Remover")?.setOnMenuItemClickListener {
+                if (posicao != POSICAO_INVALIDA) {
+                    onContatoClickListener.onRemoverMenuItemClick(posicao)
+                    true
+                }
+                false
+            }
+        }
     }
 
     // Chamado pelo LayoutManager para criar uma nova View
@@ -46,6 +71,7 @@ class ContatosAdapter(
         holder.itemView.setOnClickListener{
             onContatoClickListener.onContatoClick(position)
         }
+        holder.posicao = position
     }
 
     // Chamado pelo LayoutManager para buscar a quantidade de dados e preparar a quanti

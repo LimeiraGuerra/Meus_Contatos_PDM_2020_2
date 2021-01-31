@@ -1,14 +1,14 @@
 package com.example.meuscontatos.controller
 
-import com.example.meuscontatos.model.Contato
-import com.example.meuscontatos.model.ContatoDao
-import com.example.meuscontatos.model.ContatoSqlite
+import com.example.meuscontatos.model.*
 import com.example.meuscontatos.view.MainActivity
 
 class ContatoController(mainActivity: MainActivity) {
     val contatoDao: ContatoDao
     init {
-        contatoDao = ContatoSqlite(mainActivity)
+        //contatoDao = ContatoSqlite(mainActivity)
+        //contatoDao = ContatoSharedPreferences(mainActivity)
+        contatoDao = ContatoFirebase()
     }
 
     fun insereContato(contato: Contato) = contatoDao.createContato(contato)

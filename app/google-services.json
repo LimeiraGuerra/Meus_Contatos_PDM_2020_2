@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "933046071299",
+    "firebase_url": "https://meus-contatos-aa11e-default-rtdb.firebaseio.com",
+    "project_id": "meus-contatos-aa11e",
+    "storage_bucket": "meus-contatos-aa11e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933046071299:android:090d6ca0caf10a4e495e36",
+        "android_client_info": {
+          "package_name": "com.example.meuscontatos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933046071299-fdajpdadbk6qnsbdbjbt96gcp2643mp5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.meuscontatos",
+            "certificate_hash": "ab6a37ed594ba13bfbbc8debff7ad64a98f0c46c"
+          }
+        },
+        {
+          "client_id": "933046071299-vq7rl7ob198mevvq71l64t024estoij3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6uKhQYvdouZ_AyfMSpjNHRkrq2zi_mxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933046071299-vq7rl7ob198mevvq71l64t024estoij3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

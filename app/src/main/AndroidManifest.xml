@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MeusContatos">
-        <activity android:name=".view.ContatoActivity"></activity>
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.MainActivity" />
+        <activity android:name=".view.ContatoActivity"/>
+        <activity android:name=".view.RecuperarSenhaActivity"/>
+        <activity android:name=".view.CadastrarActivity" />
+        <activity android:name=".view.AutenticacaoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
